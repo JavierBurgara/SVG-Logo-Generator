@@ -56,13 +56,13 @@ function generateLogo(answers) {
     shapeInstance.setColor(shapeColor);
   
     const svgContent = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
-        ${shapeInstance.render()}
-        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="${textColor}" font-size="50">${characters}</text>
-      </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+${shapeInstance.render()}
+<text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="${textColor}" font-size="50">${characters}</text>
+</svg>
     `;
   
-    fs.writeFile('logo.svg', svgContent, (err) => {
+    fs.writeFile('./examples/logo.svg', svgContent, (err) => {
       if (err) {
         console.error('Error writing SVG file:', err);
       } else {
