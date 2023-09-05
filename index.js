@@ -37,16 +37,25 @@ const questions = [
 function generateLogo(answers) {
     const { characters, textColor, shape, shapeColor } = answers;
     let shapeInstance;
-  
+    var position = {
+      x:"",
+      y:"",
+    }
     switch (shape) {
       case 'circle':
         shapeInstance = new Circle();
+        position.x = "50%"
+        position.y = "50%"
         break;
       case 'square':
         shapeInstance = new Square();
+        position.x = "50%"
+        position.y = "50%"
         break;
       case 'triangle':
         shapeInstance = new Triangle();
+        position.x = "25%"
+        position.y = "40%"
         break;
       default:
         console.log('Invalid shape');
@@ -58,7 +67,7 @@ function generateLogo(answers) {
     const svgContent = `
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
 ${shapeInstance.render()}
-<text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="${textColor}" font-size="50">${characters}</text>
+<text x="${position.x}" y="${position.y}" text-anchor="middle" dominant-baseline="middle" fill="${textColor}" font-size="34">${characters}</text>
 </svg>
     `;
   
